@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John - Web Developer Portfolio</title>
+    <meta name="description" content="Professional web developer portfolio showcasing projects and services">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+                <span class="logo-text">Dev<span class="highlight">X</span></span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">Pages <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="contact.html" class="btn btn-primary btn-sm">Contact us</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-elements">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-subtitle">/ About me</p>
+                    <h1 class="hero-title">
+                        I'm <span class="highlight">Njabulo Dlamini</span>, a 
+                        <span class="typewriter">Web & Software Developer</span>
+                    </h1>
+                    <p class="hero-description">
+                        Hello, I am a passionate developer specializing in software development, web technologies, and database administration. I build secure, scalable, and user-friendly systems—ranging from authentication platforms to dynamic database-driven websites—using modern development practices. I continuously improve my skills by working on real-world projects and exploring new technologies in backend development, system architecture, and UI design.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="contact.html" class="btn btn-primary">
+                            Contact me <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#portfolio" class="btn btn-outline">
+                            Browse portfolio <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="hero-social">
+                        <p>Or Follow me on social media</p>
+                        <div class="social-links">
+                            <a href="https://github.com/byprojecthub" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/njabulo-dlamini-58b66a268/" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://x.com/Colourerr" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <img src="images/davinci_edit_image_1777971785451.png" alt="John - Web Developer" class="profile-img">
+                        <div class="image-glow"></div>
+                        <div class="floating-card card-1">
+                            <i class="fas fa-code"></i>
+                            <span>4+ Years Exp.</span>
+                        </div>
+                        <div class="floating-card card-2">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>5+ Projects</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll down</span>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-count="5">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-item" data-count="3">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-item" data-count="2">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item" data-count="2">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Awards Won</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="about-preview" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">/ About me</span>
+                <h2 class="section-title">I've been developing websites since <span class="highlight">2020</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="lead">
+                        I provide efficient development and design solutions that blend functionality with refined programming.  I build applications that streamline processes and improve efficiency.  
+                    </p>
+                    <p>
+                        I create modern, responsive, and user-friendly websites and web applications using current technologies. I design, optimize, and maintain databases to ensure data integrity, security, and high performance. My development approach emphasizes clean design, fast performance.
+                    </p>
+                    <a href="about.html" class="btn btn-outline">
+                        More about me <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="about-image">
+                    <img src="images/20260505_095414[1].jpg" alt="About John">
+                    <div class="experience-badge">
+                        <span class="exp-number">4+</span>
+                        <span class="exp-text">Years of<br>Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">/ Services</span>
+                <h2 class="section-title">What I <span class="highlight">Offer</span></h2>
+                <p class="section-desc">Comprehensive web solutions tailored to your needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Custom websites built with modern technologies and best practices for optimal performance.</p>
+                    <a href="services.html" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Mobile-first approach ensuring your site looks great on all devices and screen sizes.</p>
+                    <a href="services.html" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Performance Optimization</h3>
+                    <p>Speed up your website with advanced caching, minification, and image optimization.</p>
+                    <a href="services.html" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>SEO Services</h3>
+                    <p>Improve your search rankings with technical SEO, content optimization, and analytics.</p>
+                    <a href="services.html" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Software Development</h3>
+                    <p>Developed web and Mobile Apps built with scalable, modern technologies and best practices for best software.</p>
+                    <a href="services.html" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">/ Portfolio</span>
+                <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+                <p class="section-desc">Some of my recent work</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card featured">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Reloventura Project">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">SAAS App</span>
+                        <h3>Finlytics Dashboard</h3>
+                        <p>Modern analytics dashboard with real-time data visualization</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="DeFi Project">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Web App</span>
+                        <h3>Reloventura website</h3>
+                        <p>Booking website with booking functions.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=600&h=400&fit=crop" alt="E-commerce">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">E-commerce</span>
+                        <h3>Shopify Store</h3>
+                        <p>Custom e-commerce solution with payment integration</p>
+                    </div>
+                </div>
+            </div>
+            <div class="center-btn">
+                <a href="#" class="btn btn-outline">View Projects <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Clients / Previously Worked On Section -->
+    <section class="clients">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">/ Experience</span>
+                <h2 class="section-title">Previously <span class="highlight">Worked On</span></h2>
+            </div>
+            <div class="clients-logos">
+                <div class="client-logo">
+                    <svg viewBox="0 0 160 40" fill="currentColor">
+                        <rect x="0" y="8" width="24" height="24" rx="6" fill="var(--text-secondary)"/>
+                        <text x="32" y="28" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="var(--text-secondary)">I.N Designs</text>
+                    </svg>
+                </div>
+                <div class="client-logo">
+                    <svg viewBox="0 0 160 40" fill="currentColor">
+                        <path d="M8 20C8 12 14 8 20 8C26 8 28 12 28 16C28 20 24 22 20 22C16 22 14 20 14 18" stroke="var(--text-secondary)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <text x="36" y="28" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="var(--text-secondary)">AlphaDotX</text>
+                    </svg>
+                </div>
+                <div class="client-logo">
+                    <svg viewBox="0 0 160 40" fill="currentColor">
+                        <circle cx="16" cy="20" r="12" stroke="var(--text-secondary)" stroke-width="3" fill="none"/>
+                        <path d="M10 14L22 26M22 14L10 26" stroke="var(--text-secondary)" stroke-width="2"/>
+                        <text x="36" y="28" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="var(--text-secondary)">Snape.App</text>
+                    </svg>
+                </div>
+                <div class="client-logo">
+                    <svg viewBox="0 0 180 40" fill="currentColor">
+                        <polygon points="16,4 28,36 4,36" fill="var(--text-secondary)"/>
+                        <text x="38" y="28" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="var(--text-secondary)">vueport solutions business</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">/ My Skills</span>
+                <h2 class="section-title">Technologies I <span class="highlight">Work With</span></h2>
+            </div>
+            <div class="skills-showcase">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Vue.js</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">Sass</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">REST API</span>
+                        <span class="skill-tag">GraphQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools & Others</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Webpack</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">Linux</span>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-progress">
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>JavaScript / TypeScript</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>React / Vue.js</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>PHP / Node.js</span>
+                        <span>88%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 88%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>CSS / Tailwind / Sass</span>
+                        <span>92%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 92%"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>Database Design</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">/ Testimonials</span>
+                <h2 class="section-title">What Clients <span class="highlight">Say</span></h2>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"Njabulo did an amazing work with our web-app, everything he did to optimize our software help us to reduce our loading speed by 56%"</p>
+                        <div class="testimonial-author">
+                            <img src="images/1693231488495.jpeg" alt="Usanda" class="author-img">
+                            <div class="author-info">
+                                <h4>Usanda Dukada</h4>
+                                <span>IoT Manager at JPP Municipality</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"We've never had come this far without Njabulo's great attention to detail and care for the final product"</p>
+                        <div class="testimonial-author">
+                            <img src="images/1777388537021.png" alt="Tebogo" class="author-img">
+                            <div class="author-info">
+                                <h4>Tebogo Madileng</h4>
+                                <span>CEO at AlphDotX</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"I think Njabulo was essential to our product because he truly cared to deliver world-class work results"</p>
+                        <div class="testimonial-author">
+                            <img src="images/1694008468595.jpeg" alt="Itumeleng" class="author-img">
+                            <div class="author-info">
+                                <h4>Itumeleng Nkabinde</h4>
+                                <span>Head Designer at I.N Designs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" id="prevBtn" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-dots" id="sliderDots"></div>
+                    <button class="slider-btn next" id="nextBtn" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">/ Skills</span>
+                <h2 class="section-title">Tech <span class="highlight">Stack</span></h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                <div class="skill-item"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                <div class="skill-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                <div class="skill-item"><i class="fab fa-react"></i><span>React</span></div>
+                <div class="skill-item"><i class="fab fa-node"></i><span>Node.js</span></div>
+                <div class="skill-item"><i class="fab fa-php"></i><span>PHP</span></div>
+                <div class="skill-item"><i class="fab fa-python"></i><span>Python</span></div>
+                <div class="skill-item"><i class="fas fa-database"></i><span>MySQL</span></div>
+                <div class="skill-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
+                <div class="skill-item"><i class="fab fa-docker"></i><span>Docker</span></div>
+                <div class="skill-item"><i class="fab fa-aws"></i><span>AWS</span></div>
+                <div class="skill-item"><i class="fab fa-figma"></i><span>Figma</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Interested in working together?</h2>
+                <p>Let's talk about your next project</p>
+                <a href="contact.html" class="btn btn-primary btn-lg">
+                    Let's talk <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">&lt;/&gt;</span>
+                        <span class="logo-text">Dev<span class="highlight">X</span></span>
+                    </a>
+                    <p>Building digital experiences that matter. Let's create something amazing together.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/byprojecthub" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/njabulo-dlamini-58b66a268/" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/Colourerr" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Software Development</a></li>
+                        <li><a href="#">SEO Optimization</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> njabulod.hlongwane@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +27 (68) 826-1507</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Johannesburg, SA</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vueport Solutions. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+</body>
+</html>

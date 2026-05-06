@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - John | Web Developer</title>
+    <meta name="description" content="Professional web development services including custom websites, responsive design, and performance optimization">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .services-hero {
+            padding: 160px 0 80px;
+            text-align: center;
+        }
+
+        .services-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 16px;
+        }
+
+        .services-hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-detail {
+            padding: 80px 0;
+        }
+
+        .service-detail-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .service-detail-card:nth-child(even) .service-detail-image {
+            order: 2;
+        }
+
+        .service-detail-card:nth-child(even) .service-detail-content {
+            order: 1;
+        }
+
+        .service-detail-image {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .service-detail-image i {
+            font-size: 8rem;
+            color: var(--accent);
+            opacity: 0.8;
+        }
+
+        .service-detail-content h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .service-detail-content > p {
+            margin-bottom: 24px;
+            font-size: 1.0625rem;
+        }
+
+        .feature-list {
+            margin-bottom: 32px;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+        }
+
+        .feature-list li i {
+            color: var(--accent);
+            font-size: 1rem;
+        }
+
+        .pricing-section {
+            padding: 80px 0 120px;
+            background: var(--bg-secondary);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            text-align: center;
+            transition: all var(--transition-normal);
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px var(--shadow-card);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: white;
+            padding: 6px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .pricing-card .description {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            font-size: 0.9375rem;
+        }
+
+        .pricing-features {
+            text-align: left;
+            margin-bottom: 32px;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-features li i {
+            color: #22c55e;
+            font-size: 0.875rem;
+        }
+
+        .pricing-features li.not-included {
+            opacity: 0.5;
+        }
+
+        .pricing-features li.not-included i {
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 1023px) {
+            .service-detail-card {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .service-detail-card:nth-child(even) .service-detail-image,
+            .service-detail-card:nth-child(even) .service-detail-content {
+                order: unset;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .pricing-card.featured:hover {
+                transform: scale(1) translateY(-8px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+                <span class="logo-text">Dev<span class="highlight">X</span></span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">Pages <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="index.html#portfolio">Portfolio</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                    </ul>
+                </li>
+                <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="contact.html" class="btn btn-primary btn-sm">Contact us</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Hero -->
+    <section class="services-hero">
+        <div class="container">
+            <span class="section-tag">/ Services</span>
+            <h1>My <span class="highlight">Services</span></h1>
+            <p>Comprehensive web solutions tailored to your needs. From concept to deployment, I've got you covered.</p>
+        </div>
+    </section>
+
+    <!-- Services Detail -->
+    <section class="services-detail">
+        <div class="container">
+            <!-- Web Development -->
+            <div class="service-detail-card">
+                <div class="service-detail-image">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="service-detail-content">
+                    <h2>Web Development</h2>
+                    <p>Custom websites built with modern technologies and best practices for optimal performance and scalability.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Custom website development</li>
+                        <li><i class="fas fa-check-circle"></i> E-commerce solutions</li>
+                        <li><i class="fas fa-check-circle"></i> CMS integration (WordPress, Shopify)</li>
+                        <li><i class="fas fa-check-circle"></i> API development & integration</li>
+                        <li><i class="fas fa-check-circle"></i> Database design & optimization</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Responsive Design -->
+            <div class="service-detail-card">
+                <div class="service-detail-image">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="service-detail-content">
+                    <h2>Responsive Design</h2>
+                    <p>Mobile-first approach ensuring your site looks great and functions perfectly on all devices and screen sizes.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Mobile-first design approach</li>
+                        <li><i class="fas fa-check-circle"></i> Cross-browser compatibility</li>
+                        <li><i class="fas fa-check-circle"></i> Progressive Web Apps (PWA)</li>
+                        <li><i class="fas fa-check-circle"></i> Accessibility compliance (WCAG)</li>
+                        <li><i class="fas fa-check-circle"></i> Performance optimization</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Performance Optimization -->
+            <div class="service-detail-card">
+                <div class="service-detail-image">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <div class="service-detail-content">
+                    <h2>Performance Optimization</h2>
+                    <p>Speed up your website with advanced caching, minification, and image optimization techniques.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Page speed optimization</li>
+                        <li><i class="fas fa-check-circle"></i> Core Web Vitals improvement</li>
+                        <li><i class="fas fa-check-circle"></i> Image & asset optimization</li>
+                        <li><i class="fas fa-check-circle"></i> Caching strategies</li>
+                        <li><i class="fas fa-check-circle"></i> Server response optimization</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- SEO Services -->
+            <div class="service-detail-card">
+                <div class="service-detail-image">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="service-detail-content">
+                    <h2>SEO Services</h2>
+                    <p>Improve your search rankings with technical SEO, content optimization, and comprehensive analytics.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Technical SEO audit</li>
+                        <li><i class="fas fa-check-circle"></i> On-page optimization</li>
+                        <li><i class="fas fa-check-circle"></i> Schema markup implementation</li>
+                        <li><i class="fas fa-check-circle"></i> Google Analytics setup</li>
+                        <li><i class="fas fa-check-circle"></i> Monthly SEO reporting</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+             <!-- Web Development -->
+             <div class="service-detail-card">
+                <div class="service-detail-image">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="service-detail-content">
+                    <h2>Software Development</h2>
+                    <p>Custom Saas built with modern technologies and best practices for optimal performance and scalability.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Custom Saas development</li>
+                        <li><i class="fas fa-check-circle"></i> Platform Evaluation </li>
+                        <li><i class="fas fa-check-circle"></i> CMS integration (WordPress, Shopify)</li>
+                        <li><i class="fas fa-check-circle"></i> API development & integration</li>
+                        <li><i class="fas fa-check-circle"></i> Cloud implementation </li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">/ Pricing</span>
+                <h2 class="section-title">Simple, Transparent <span class="highlight">Pricing</span></h2>
+                <p class="section-desc">Choose the plan that works best for your project</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">R2,999<span>/project</span></div>
+                    <p class="description">Perfect for small businesses and personal portfolios</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 5 Pages Website</li>
+                        <li><i class="fas fa-check"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check"></i> Basic SEO Setup</li>
+                        <li><i class="fas fa-check"></i> Contact Form</li>
+                        <li><i class="fas fa-check"></i> 1 Month Support</li>
+                        <li class="not-included"><i class="fas fa-times"></i> Custom Features</li>
+                        <li class="not-included"><i class="fas fa-times"></i> E-commerce</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline">Get Started</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Popular</div>
+                    <h3>Professional</h3>
+                    <div class="price">R3,499<span>/project</span></div>
+                    <p class="description">Ideal for growing businesses and startups</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 10 Pages Website</li>
+                        <li><i class="fas fa-check"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check"></i> Advanced SEO</li>
+                        <li><i class="fas fa-check"></i> Custom Features</li>
+                        <li><i class="fas fa-check"></i> Blog Setup</li>
+                        <li><i class="fas fa-check"></i> Analytics Dashboard</li>
+                        <li><i class="fas fa-check"></i> 3 Months Support</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">R7,499<span>/project</span></div>
+                    <p class="description">For large-scale projects and complex requirements</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Unlimited Pages</li>
+                        <li><i class="fas fa-check"></i> Custom Web Application</li>
+                        <li><i class="fas fa-check"></i> E-commerce Platform</li>
+                        <li><i class="fas fa-check"></i> API Integration</li>
+                        <li><i class="fas fa-check"></i> Priority Support</li>
+                        <li><i class="fas fa-check"></i> 6 Months Support</li>
+                        <li><i class="fas fa-check"></i> Dedicated Manager</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Have a custom project in mind?</h2>
+                <p>Let's discuss your specific requirements</p>
+                <a href="contact.html" class="btn btn-primary btn-lg">
+                    Let's talk <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">&lt;/&gt;</span>
+                        <span class="logo-text">Dev<span class="highlight">X</span></span>
+                    </a>
+                    <p>Building digital experiences that matter. Let's create something amazing together.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/byprojecthub" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/njabulo-dlamini-58b66a268/" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/Colourerr" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Software Development</a></li>
+                        <li><a href="#">SEO Optimization</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> njabulod.hlongwane@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +27 (68) 826-1507</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Johannesburg, SA</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vueport Solutions. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

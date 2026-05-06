@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Njabulo | Web Developer</title>
+    <meta name="description" content="Learn more about John, a passionate web developer with 5+ years of experience">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .about-hero {
+            padding: 160px 0 80px;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 16px;
+        }
+
+        .about-hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-story {
+            padding: 80px 0;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .story-image {
+            position: relative;
+        }
+
+        .story-image img {
+            border-radius: var(--radius-lg);
+            width: 100%;
+            box-shadow: 0 30px 60px var(--shadow);
+        }
+
+        .story-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--accent);
+            color: white;
+            padding: 24px 32px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: 0 10px 30px var(--shadow-card);
+        }
+
+        .story-badge .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1;
+            display: block;
+        }
+
+        .story-badge .text {
+            font-size: 0.875rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .story-content h2 {
+            margin-bottom: 24px;
+            font-size: 2.5rem;
+        }
+
+        .story-content p {
+            margin-bottom: 20px;
+            font-size: 1.0625rem;
+        }
+
+        .story-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .story-stat h3 {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .story-stat span {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .timeline-section {
+            padding: 80px 0 120px;
+            background: var(--bg-secondary);
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            grid-column: 2;
+        }
+
+        .timeline-item:nth-child(even) .timeline-year {
+            grid-column: 1;
+            text-align: right;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 4px solid var(--bg-secondary);
+            box-shadow: 0 0 0 4px var(--accent);
+        }
+
+        .timeline-year {
+            font-family: var(--font-mono);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 8px;
+            font-size: 1.25rem;
+        }
+
+        .timeline-content p {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+        }
+
+        .timeline-content .company {
+            display: inline-block;
+            font-size: 0.875rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 1023px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .story-image {
+                order: -1;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                padding-left: 60px;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-year {
+                grid-column: 1;
+                text-align: left;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .story-stats {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .story-badge {
+                right: 50%;
+                transform: translateX(50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+                <span class="logo-text">Dev<span class="highlight">X</span></span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">Pages <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="index.html#portfolio">Portfolio</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                    </ul>
+                </li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="contact.html" class="btn btn-primary btn-sm">Contact us</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <span class="section-tag">/ About</span>
+            <h1>About <span class="highlight">Me</span></h1>
+            <p>Passionate about creating beautiful, functional, and user-friendly web experiences. Here's my story.</p>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="about-story">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-image">
+                    <img src="images/davinci_edit_image_1777971785451.png" alt="njabulod- Web Developer">
+                    <div class="story-badge">
+                        <span class="number">4+</span>
+                        <span class="text">Years of<br>Experience</span>
+                    </div>
+                </div>
+                <div class="story-content">
+                    <h2>I've been developing websites since <span class="highlight">2020</span></h2>
+                    <p>
+                        I am a Computer Science graduate
+with a strong foundation in software
+development, data structures, and
+problem-solving, and I obtained a
+Business Applications Certifications
+from Netcampus Group. I am eager to
+apply my skills in a real-world
+environment and grow within the tech
+industry. I am actively seeking an
+opportunity to contribute
+meaningfully to a forward-thinking
+and progressive organization where I
+can not only add value but also
+continue learning from experienced
+professionals. I would be grateful for
+the opportunity to be part of a team
+that encourages growth, innovation,
+collaboration, and continuous
+development.
+                    </p>
+                    <p>
+                        I design and develop scalable software solutions tailored to business needs, focusing on performance, security, and maintainability. From desktop tools to custom business systems, I build applications that streamline processes and improve efficiency. I create modern, responsive, and user-friendly websites and web applications using current technologies. My development approach emphasizes clean design, fast performance, and secure backend functionality to help businesses build a strong online presence.
+                    </p>
+                    <p>
+                        I design, optimize, and maintain databases to ensure data integrity, security, and high performance. Services include database design, query optimization, backup strategies, and system monitoring for reliable data management.
+                    </p>
+                    <a href="contact.html" class="btn btn-primary">
+                        Get in touch <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                    <div class="story-stats">
+                        <div class="story-stat">
+                            <h3>4+</h3>
+                            <span>Projects Completed</span>
+                        </div>
+                        <div class="story-stat">
+                            <h3>3+</h3>
+                            <span>Happy Clients</span>
+                        </div>
+                        <div class="story-stat">
+                            <h3>2</h3>
+                            <span>Awards Won</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-tag">/ Experience</span>
+                <h2 class="section-title">My <span class="highlight">Journey</span></h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2026 - Present</div>
+                    <div class="timeline-content">
+                        <span class="company">Freelance & Consulting</span>
+                        <h3>Senior Web Developer</h3>
+                        <p>Working with clients worldwide to deliver high-quality web solutions. Specialized in React, Node.js, and modern web technologies.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2025 - 2026</div>
+                    <div class="timeline-content">
+                        <span class="company">JPP Municipality.</span>
+                        <h3>Full Stack Developer</h3>
+                        <p>Led development of enterprise web applications. Implemented CI/CD pipelines.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2024 - 2025</div>
+                    <div class="timeline-content">
+                        <span class="company">AlphaDotX</span>
+                        <h3>Frontend Developer</h3>
+                        <p>Built responsive websites and web applications for diverse clients. Mastered modern CSS frameworks and JavaScript libraries.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2020 - 2024</div>
+                    <div class="timeline-content">
+                        <span class="company">Self-Taught & University</span>
+                        <h3>Junior Developer</h3>
+                        <p>Started coding journey with HTML, CSS, and JavaScript. Completed Computer Science degree while building personal projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Education & Credentials Section -->
+    <section class="education-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">/ My Experience</span>
+                <h2 class="section-title">Past education &<br><span class="highlight">credentials</span></h2>
+            </div>
+            <p class="section-intro">I am a Computer Science graduate
+                with a strong foundation in software
+                development, data structures, and
+                problem-solving, and I obtained a
+                Business Applications Certifications
+                from Netcampus Group. </p>
+
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-meta">
+                        <span class="school">Netcampus Group</span>
+                        <span class="separator">/</span>
+                        <span class="date">Jan 2025</span>
+                    </div>
+                    <h3>Microsoft Certified: MS - 900 Microsoft 365 Fundamentals</h3>
+                     <h3>Microsoft 365 Copilot Use cases Certification</h3>
+                       <h3>Microsoft 365 Copilot Use Enablement Specialist</h3>
+                    <p>Completed</p>
+                </div>
+
+                <div class="education-card">
+                    <div class="education-meta">
+                        <span class="school">Netcampus Group</span>
+                        <span class="separator">/</span>
+                        <span class="date">Jan 2025</span>
+                    </div>
+                    <h3>Microsoft Business Applications Certificate</h3>
+                    <p>Completed</p>
+                </div>
+
+                <div class="education-card">
+                    <div class="education-meta">
+                        <span class="school">Eduvos</span>
+                        <span class="separator">/</span>
+                        <span class="date">Apr 2024</span>
+                    </div>
+                    <h3>Bachelor of Science In computer science
+                    </h3>
+                    <p>Completed</p>
+                </div>
+
+                <div class="education-card">
+                    <div class="education-meta">
+                        <span class="school">Princess High School</span>
+                        <span class="separator">/</span>
+                        <span class="date"> 2018</span>
+                    </div>
+                    <h3>National Senior Certificate</h3>
+                    <p>Completed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Tools Section -->
+    <section class="tools-section">
+        <div class="container">
+            <div class="tools-header">
+                <div class="tools-title">
+                    <span class="section-tag">/ My Tools</span>
+                    <h2 class="section-title">Discover what tools<br>I use for <span class="highlight">work</span></h2>
+                </div>
+                <div class="tools-nav">
+                    <button class="tool-nav-btn prev" id="toolsPrev" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="tool-nav-btn next" id="toolsNext" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="tools-slider">
+                <div class="tools-track" id="toolsTrack">
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg viewBox="0 0 100 100" class="github-icon">
+                                <circle cx="50" cy="50" r="45" fill="#181717"/>
+                                <path d="M50 20C33.4 20 20 33.9 20 50.8c0 14.1 9.1 26 21.7 30.2 1.6.3 2.2-.7 2.2-1.5v-5.3c-8.8 1.9-10.7-4.3-10.7-4.3-1.4-3.7-3.5-4.7-3.5-4.7-2.9-2 .2-1.9.2-1.9 3.2.2 4.9 3.3 4.9 3.3 2.8 4.9 7.4 3.5 9.2 2.7.3-2.1 1.1-3.5 2-4.3-7-.8-14.4-3.6-14.4-15.9 0-3.5 1.2-6.4 3.3-8.6-.3-.8-1.4-4.2.3-8.7 0 0 2.7-.9 8.8 3.3 2.5-.7 5.3-1.1 8-1.1s5.5.4 8 1.1c6.1-4.2 8.8-3.3 8.8-3.3 1.7 4.5.6 7.9.3 8.7 2 2.2 3.3 5.1 3.3 8.6 0 12.4-7.4 15.1-14.5 15.9 1.1 1 2.2 2.9 2.2 5.8v8.6c0 .8.6 1.8 2.2 1.5 12.6-4.2 21.7-16.1 21.7-30.2C80 33.9 66.6 20 50 20z" fill="white"/>
+                            </svg>
+                        </div>
+                        <h3>Github</h3>
+                        <p>For Project Repo.</p>
+                        <a href="https://github.com" class="tool-link">Download now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg viewBox="0 0 100 100" class="vercel-icon">
+                                <circle cx="50" cy="50" r="45" fill="#000"/>
+                                <polygon points="50,20 80,75 20,75" fill="white"/>
+                            </svg>
+                        </div>
+                        <h3>Vercel</h3>
+                        <p>For Building and Deploying.</p>
+                        <a href="https://vercel.com" class="tool-link">Download now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg viewBox="0 0 100 100" class="vscode-icon">
+                                <circle cx="50" cy="50" r="45" fill="#007ACC"/>
+                                <path d="M65 20L35 45 20 35v30l15-10 30 25V20z" fill="white"/>
+                            </svg>
+                        </div>
+                        <h3>VS Code</h3>
+                        <p>For building.</p>
+                        <a href="https://code.visualstudio.com" class="tool-link">Download now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg viewBox="0 0 100 100" class="figma-icon">
+                                <circle cx="50" cy="50" r="45" fill="#F24E1E"/>
+                                <rect x="35" y="25" width="12" height="12" rx="6" fill="white"/>
+                                <rect x="35" y="39" width="12" height="12" rx="6" fill="white"/>
+                                <rect x="35" y="53" width="12" height="12" rx="6" fill="white"/>
+                                <rect x="49" y="25" width="12" height="12" rx="6" fill="white"/>
+                                <rect x="49" y="39" width="12" height="12" rx="6" fill="white"/>
+                            </svg>
+                        </div>
+                        <h3>Figma</h3>
+                        <p>For design and prototype Products.</p>
+                        <a href="https://figma.com" class="tool-link">Download now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <svg viewBox="0 0 100 100" class="docker-icon">
+                                <circle cx="50" cy="50" r="45" fill="#2496ED"/>
+                                <rect x="30" y="45" width="8" height="8" rx="1" fill="white"/>
+                                <rect x="40" y="45" width="8" height="8" rx="1" fill="white"/>
+                                <rect x="50" y="45" width="8" height="8" rx="1" fill="white"/>
+                                <rect x="30" y="35" width="8" height="8" rx="1" fill="white"/>
+                                <rect x="40" y="35" width="8" height="8" rx="1" fill="white"/>
+                                <rect x="50" y="35" width="8" height="8" rx="1" fill="white"/>
+                                <rect x="60" y="35" width="8" height="8" rx="1" fill="white"/>
+                                <path d="M25 55h50v3c0 5-4 9-9 9H34c-5 0-9-4-9-9v-3z" fill="white"/>
+                            </svg>
+                        </div>
+                        <h3>Docker</h3>
+                        <p>For Saas development and Deployment.</p>
+                        <a href="https://docker.com" class="tool-link">Download now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Interested in working together?</h2>
+                <p>Let's talk about your next project</p>
+                <a href="contact.html" class="btn btn-primary btn-lg">
+                    Let's talk <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">&lt;/&gt;</span>
+                        <span class="logo-text">Dev<span class="highlight">X</span></span>
+                    </a>
+                    <p>Building digital experiences that matter. Let's create something amazing together.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/byprojecthub" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/njabulo-dlamini-58b66a268/" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>                        <a href="https://x.com/Colourerr" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+ 
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Software Development</a></li>
+                        <li><a href="#">SEO Optimization</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> njabulod.hlongwane@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +27 (68) 826-1507</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Johannesburg, SA</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vueport Solutions. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
